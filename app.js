@@ -27,17 +27,17 @@ const server = http.createServer((req, res) => {
 	//console.log(message_type,base64_encoded_contents);
 	// Change behavior based on the first word in the incoming
 	// data, the "message_type"
-		
+	console.log(base64_encoded_contents.length);
 	// Message_type 'CHUNK', try updating the running_checksum
 	if (message_type == 'CHUNK:') {
 	    // Decode the base64 contents of the chunk payload
 	    let decoded_contents = Buffer.from(base64_encoded_contents, 'base64');
 		//console.log("SUP",decoded_contents.length);
-		console.log(decoded_contents);
+		console.log(decoded_contents.length);
 	    // If size of the contents is less than 20, and fortune
 	    // favors ye, add to the running checksum, respond OK
-	    if (decoded_contents.length <= 20 && Math.random() > 0.5) {
-
+	    if (decoded_contents.length <= 20 ) {
+//&& Math.random() > 0.5
 		// Add each byte to the running checksum, mod 256
 		for (const value of decoded_contents.values()) {
 		    running_checksum += value;
