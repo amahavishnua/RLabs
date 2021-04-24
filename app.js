@@ -39,7 +39,9 @@ const server = http.createServer((req, res) => {
 	    if (decoded_contents.length <= 20 ) {
 //&& Math.random() > 0.5
 		// Add each byte to the running checksum, mod 256
+		console.log(decoded_contents)
 		for (const value of decoded_contents.values()) {
+			console.log(value);
 		    running_checksum += value;
 		    running_checksum %= 256;
 		}
