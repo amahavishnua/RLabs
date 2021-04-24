@@ -76,4 +76,4 @@ if __name__ == '__main__':
     if args.check:
         checkSumPost(readHex(args.filename))
     else:
-        print('\nUse the -h or --help flags for help')
+        print('\nUse the -h or --help flags for help\n')
